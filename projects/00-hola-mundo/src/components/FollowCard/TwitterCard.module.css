@@ -39,7 +39,44 @@
     cursor: pointer;
 }
 
+
 .button:hover {
     background-color: #09f;
     transition: 0.3s ease background-color;
+}
+
+.stopFollowing {
+    margin-left: 16px;
+    border: 1px solid;
+    border-color: rgb(100, 100, 100);
+    border-radius: 99px;
+    padding: 6px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    width: 130px;
+}
+
+.stopFollowing:hover {
+    border: 1px solid;
+    border-color: rgb(224, 1, 1);
+    background-color: rgba(206, 1, 1, 0.288);
+    color: red
+}
+
+.text {
+    display: block;
+}
+
+.stopFollowing:hover .text {
+    display: none;
+}
+
+.stopFollowing:hover .differentText {
+    display: block;
+}
+
+.differentText {
+    display: none;
 }

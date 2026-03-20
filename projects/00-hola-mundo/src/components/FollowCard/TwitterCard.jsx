@@ -5,6 +5,7 @@ export function TwitterCard ({handle, name}) {
     const [isFollowing, setIsFollowing] = useState(false)
 
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
+    const buttonClassName = isFollowing ? styles.stopFollowing : styles.button 
     
     return(
         <div className={styles.row}>
@@ -20,8 +21,9 @@ export function TwitterCard ({handle, name}) {
                     </div>
                 </div>
             </div>
-            <button className={styles.button} onClick={() => setIsFollowing(!isFollowing)}>
-                {text}
+            <button className={buttonClassName} onClick={() => setIsFollowing(!isFollowing)}>
+                <span className={styles.text}>{text}</span>
+                <span className={styles.differentText}>Dejar de seguir</span>
             </button>
         </div>
     )
