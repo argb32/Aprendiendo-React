@@ -1,6 +1,11 @@
+import { useState } from 'react'
 import styles from './TwitterCard.module.css'
 
-export function TwitterCard ({handle, name, isFollowing}) {
+export function TwitterCard ({handle, name}) {
+    const [isFollowing, setIsFollowing] = useState(false)
+
+    const text = isFollowing ? 'Siguiendo' : 'Seguir'
+    
     return(
         <div className={styles.row}>
             <div className={styles.header} >
@@ -12,16 +17,11 @@ export function TwitterCard ({handle, name, isFollowing}) {
                     </>
                     <div className={styles.handle}>
                         @{handle}
-                        {/* {isFollowing && <div>
-                            Te sigue
-                        </div>
-
-                        } */}
                     </div>
                 </div>
             </div>
-            <button className={styles.button}>
-                Seguir
+            <button className={styles.button} onClick={() => setIsFollowing(!isFollowing)}>
+                {text}
             </button>
         </div>
     )
